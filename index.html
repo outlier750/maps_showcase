@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lidar Maps</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Localization Lidar Maps</div>
+        <div class="container">
+            <label class="toggle_label">
+                <input type="checkbox" id="mode" class="toggle">
+                <span class="slider round">
+                    <i class="fa-solid fa-moon fa-lg fa-spin moon"></i>
+                    <i class="fa-solid fa-sun fa-spin fa-lg sun"></i>
+                </span>
+            </label>
+        </div>
+    </header>
+
+    <div class="search-bar-container">
+        <div class="search-bar">
+            <input type="text" id="map-search" placeholder="Search for a map...">
+        </div>
+    </div>
+
+
+    <section class="maps-grid" id="maps-grid">
+        <!-- Map tiles will be dynamically generated here -->
+    </section>
+
+    <!-- Embed JSON data directly in the HTML for static page to avoid CORS issue-->
+    <!-- https://www.openstreetmap.org/query?lat=25.29408&lon=55.32587#map=19/25.29405/55.32553&layers=N -->
+    <script id="map-data" type="application/json">
+        {
+            "maps": [
+                {
+                    "name": "Map 1",
+                    "path": "map1",
+                    "image": "map.jpg",
+                    "download": "https://filesampleshub.com/download/document/txt/sample1.txt",
+                    "mirror": "https://filesampleshub.com/download/document/txt/sample1.txt",
+                    "version": "1.2.3",
+                    "history": "history.html",
+                    "osmEmbed": "https://www.openstreetmap.org/export/embed.html?bbox=54.2724609375%2C24.339205902231583%2C54.73974609375%2C24.598012462186366&layer=mapnik"
+                },
+                {
+                    "name": "Map 2",
+                    "path": "map2",
+                    "image": "map.jpg",
+                    "download": "https://filesampleshub.com/download/document/txt/sample2.txt",
+                    "mirror": "https://filesampleshub.com/download/document/txt/sample2.txt",
+                    "version": "1.2.3",
+                    "history": "history.html",
+                    "osmEmbed": "https://www.openstreetmap.org/export/embed.html?bbox=54.2724609375%2C24.339205902231583%2C54.73974609375%2C24.598012462186366&layer=mapnik"
+                }
+            ]
+        }
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

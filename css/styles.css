@@ -1,0 +1,216 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-fg);
+    text-align: center; 
+}
+
+.container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.toggle {
+    visibility: hidden;
+}
+
+.toggle_label {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background-color: #343434;
+    border-radius: 30px;
+}
+
+.slider {
+    bottom: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    bottom: 0;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 2px;
+    position: absolute;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.toggle:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+.moon, .sun {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    transition: opacity 0.4s;
+}
+
+.moon {
+    left: 8px;
+    opacity: 1;
+}
+
+.sun {
+    right: 8px;
+    opacity: 0;
+}
+
+.toggle:checked ~ .slider .moon {
+    opacity: 0;
+}
+
+.toggle:checked ~ .slider .sun {
+    opacity: 1;
+}
+
+/* New styles for search bar container */
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid #ddd;
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 600px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Updated Map Tile Styles */
+.maps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--color-bg);
+    justify-content: center;
+}
+
+.map-tile {
+    background-color: var(--tile-bg-color); /* Use the variable for background color */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%; /* Ensure the tile takes up full width but within defined column size */
+    max-width: 300px; /* Set a maximum width for consistency */
+    margin: 0 auto; /* Center the tile horizontally */
+}
+
+.map-tile img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.map-info {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.map-info h2 {
+    font-size: 1.5rem;
+    color: var(--color-fg);
+}
+
+.map-info p {
+    font-size: 1rem;
+    color: var(--color-fg);
+    margin: 5px 0;
+}
+
+.map-embed {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.map-embed iframe {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.map-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.map-links a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.map-links a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white; /* White text on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+/* Light and Dark Theme Variables */
+body.light {
+    --color-bg: #ffffff;
+    --color-fg: #000000;
+    --color-accent: #007bff;
+    --tile-bg-color: #f4f4e8; /* White background for tiles in light mode */
+}
+
+body.dark {
+    --color-bg: #000000;
+    --color-fg: #ffffff;
+    --color-accent: #007bff;
+    --tile-bg-color: #2a2a2a; /* Dark background for tiles in dark mode */
+}
