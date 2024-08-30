@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h2>${map.name}</h2>
                     <p>Version: ${map.version}</p>
                     <div class="map-links">
-                        <a href="#" data-download-url="${map.download}" class="download-link">Download</a>
+                        <a href="${map.download}" target="_blank" class="open-link">Download</a>
                         <a href="#" data-download-url="${map.mirror}" class="download-link">Mirror</a>
                         </div>
                      <a href="${mapsPath + map.path + '/' + map.history}">View History</a>
